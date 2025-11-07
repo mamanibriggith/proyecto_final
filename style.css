@@ -1,0 +1,252 @@
+/* VARIABLES Y RESET BÁSICO */
+:root {
+    --primary-color: #A94064; /* Un tono borgoña/magenta elegante */
+    --secondary-color: #383e56; /* Gris oscuro para texto */
+    --accent-color: #f7b731; /* Un toque dorado/ámbar */
+    --bg-light: #f4f4f4;
+    --white-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    background-color: var(--white-color);
+}
+
+/* NAVEGACIÓN */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--white-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none; /* Oculto por defecto en desktop */
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+/* ESTILO DE BOTONES */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s, opacity 0.3s;
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.btn-whatsapp {
+    background-color: #25d366; /* Verde WhatsApp */
+    color: var(--white-color);
+}
+
+.btn-whatsapp-large {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 1.1em;
+    padding: 15px 40px;
+}
+
+/* HERO (CABECERA) */
+.hero {
+    background: url('img/salon-bg.jpg') no-repeat center center/cover; /* Añadir una imagen de fondo aquí */
+    min-height: 60vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white-color);
+    position: relative;
+    z-index: 1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Capa oscura para mejor lectura */
+    z-index: -1;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+/* SECCIONES GENERALES */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+/* GRID DE SERVICIOS (CARDS) */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.service-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.service-card p {
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.card-btn {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-btn:hover {
+    background-color: #db9c2c;
+}
+
+/* CONTACTO */
+.contact-details {
+    margin: 30px 0;
+    font-size: 1.1em;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--bg-light);
+    text-align: center;
+    padding: 20px 20px;
+    font-size: 0.9em;
+}
+
+/* RESPONSIVIDAD (Móviles) */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+
+    /* Ocultar menú en móvil y mostrar toggle */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--white-color);
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links li {
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+        border-top: 1px solid #eee;
+    }
+}
